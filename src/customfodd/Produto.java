@@ -5,10 +5,45 @@
  */
 package customfodd;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vilel
  */
 public class Produto {
+    String nomeProduto = null;
+    Double preco = 0.0;
+    ArrayList<Item> iA = new ArrayList<>();
+
+    public Produto() {
+    }
+    public void addItens(Item i){
+        iA.add(i);
+    }
+    
+    public String getNomeProduto() {
+        return nomeProduto;
+    }
+
+    public void setNomeProduto(String nomeProduto) {
+        this.nomeProduto = nomeProduto;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public ArrayList<Item> getiA() {
+        return iA;
+    }
+
+    public void setiA(ArrayList<Item> iA) {
+        this.iA = iA;
+    }
     
 }
