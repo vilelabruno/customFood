@@ -16,7 +16,9 @@ public class Produto {
     Double preco = 0.0;
     ArrayList<Item> iA = new ArrayList<>();
 
-    public Produto() {
+    public Produto(String nome, Double p) {
+        preco = p;
+        nomeProduto = nome;
     }
     public void addItens(Item i){
         iA.add(i);

@@ -13,10 +13,11 @@ import java.util.ArrayList;
  */
 public class Pedido {
     ArrayList<Item> iA = new ArrayList<>();
-    String endereco = null;
+    Usuario user = new Usuario();
     int tipoPagto;
     int status = 0;
-    public Pedido(ArrayList<Item> iA, ArrayList<Produto> iP, String endereco, int tipoPagto) {
+    public Pedido(ArrayList<Item> iA, ArrayList<Produto> iP, Usuario u, int tipoPagto) {
+        this.user = u;
         this.iA = iA;
         for (Produto p : iP){
             for (Item i : p.getiA()){
@@ -24,7 +25,6 @@ public class Pedido {
             }
         }
         this.tipoPagto = tipoPagto;
-        this.endereco = endereco;
     }
 
     
@@ -34,14 +34,6 @@ public class Pedido {
 
     public void setiA(ArrayList<Item> iA) {
         this.iA = iA;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
     }
 
     public int getTipoPagto() {
