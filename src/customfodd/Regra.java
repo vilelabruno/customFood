@@ -6,6 +6,13 @@ import java.util.Map;
 public class Regra {
 
     private int id;
+    private boolean produtosCustomizaveis;
+    private Map<DayOfWeek, Float> descontos;
+    
+    public Regra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos){
+        this.produtosCustomizaveis = produtosCustomizaveis;
+        this.descontos = descontos;
+    }
 
     public void setId(int id) {
         this.id = id;
@@ -30,8 +37,4 @@ public class Regra {
     public Map<DayOfWeek, Float> getDescontos() {
         return descontos;
     }
-
-    private boolean produtosCustomizaveis;
-
-    private Map<DayOfWeek, Float> descontos;
 }

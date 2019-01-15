@@ -1,6 +1,8 @@
 package customfodd;
 
+import java.time.DayOfWeek;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Estabelecimento {
 
@@ -25,8 +27,17 @@ public class Estabelecimento {
         filaPedidos(p);
         return 1;
     }
-    public Regra criaRegra(Regra regra) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    
+    public int cadastraFuncionario(String nome, int cpf, String cargo, bool eGerente){
+        
+        Funcionario f = new Funcionario(nome, cpf, cargo, eGerente);
+        return f.getId();
+    }
+    
+    public Regra criaRegra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos) {
+        
+        Regra r = new Regra(produtosCustomizaveis, descontos);
+        return r.getId();
     }
 
     synchronized void filaPedidos(Pedido p) {

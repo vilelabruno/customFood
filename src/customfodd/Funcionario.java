@@ -1,6 +1,13 @@
 package customfodd;
 
 public class Funcionario {
+    
+    public Funcionario(String nome, int cpf, String cargo, boolean eGerente){
+        this.nome = nome;
+        this.cpf = cpf;
+        this.cargo = cargo;
+        this.eGerente = eGerente;
+    }
 
     private int id;
 
