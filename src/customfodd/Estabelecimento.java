@@ -13,7 +13,7 @@ public class Estabelecimento {
     public int getId() {
         return id;
     }
-    public void cadastraProduto(ArrayList<Item> iA, String nome, double preco){
+    public void cadastrarProduto(ArrayList<Item> iA, String nome, double preco){
         Produto p = new Produto(nome, preco);
         for (Item i : iA){
             p.addItens(i);
