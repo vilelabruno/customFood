@@ -1,4 +1,4 @@
-package customfodd;
+package Dominio;
 
 public class CustomFood {
 

@@ -1,4 +1,4 @@
-package customfodd;
+package Dominio;
 
 import java.time.DayOfWeek;
 import java.util.ArrayList;
