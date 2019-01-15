@@ -4,7 +4,7 @@ public class Estabelecimento {
 
     private int id;
 
-    public int setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
