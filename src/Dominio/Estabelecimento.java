@@ -9,7 +9,7 @@ public class Estabelecimento {
     private int id;
 
     private ArrayList<Funcionario> iF = new ArrayList<Funcionario>();
-    
+    private Regra r = null;
     public void setId(int id) {
         this.id = id;
     }
@@ -17,12 +17,12 @@ public class Estabelecimento {
     public int getId() {
         return id;
     }
-    public void cadastrarProduto(ArrayList<Item> iA, String nome, double preco){
+    public Produto cadastrarProduto(ArrayList<Item> iA, String nome, double preco){
         Produto p = new Produto(nome, preco);
         for (Item i : iA){
             p.addItens(i);
         }
-        
+        return p;
     }
     public int fazerPedido(ArrayList<Produto> iP, ArrayList<Item> iI, Usuario u, int tipoPagto){
         Pedido p = new Pedido(iI, iP, u, tipoPagto);
@@ -30,20 +30,23 @@ public class Estabelecimento {
         return 1;
     }
     
-    public int cadastraFuncionario(String nome, int cpf, String cargo, Boolean eGerente){
+    public int cadastraFuncionario(String nome, String cpf, String cargo, Boolean eGerente){
         
         Funcionario f = new Funcionario(nome, cpf, cargo, eGerente);
         this.iF.add(f);
-        return f.getId();
+        return 1;
     }
     
-    public int criaRegra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos) {
+    public int criaRegra(boolean eCustomizavel, Map<DayOfWeek, Double> descontos) {
         
-        Regra r = new Regra(produtosCustomizaveis, descontos);
-        return r.getId();
+        Regra r = new Regra(eCustomizavel, descontos);
+        this.r = r;
+        return 1;
     }
 
     synchronized void filaPedidos(Pedido p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("fila pedidos");
     }
+
+    
 }

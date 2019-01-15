@@ -7,9 +7,9 @@ public class Regra {
 
     private int id;
     private boolean produtosCustomizaveis;
-    private Map<DayOfWeek, Float> descontos;
+    private Map<DayOfWeek, Double> descontos;
     
-    public Regra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos){
+    public Regra(boolean produtosCustomizaveis, Map<DayOfWeek, Double> descontos){
         this.produtosCustomizaveis = produtosCustomizaveis;
         this.descontos = descontos;
     }
@@ -22,7 +22,7 @@ public class Regra {
         this.produtosCustomizaveis = produtosCustomizaveis;
     }
 
-    public void setDescontos(Map<DayOfWeek, Float> descontos) {
+    public void setDescontos(Map<DayOfWeek, Double> descontos) {
         this.descontos = descontos;
     }
 
@@ -34,7 +34,7 @@ public class Regra {
         return produtosCustomizaveis;
     }
 
-    public Map<DayOfWeek, Float> getDescontos() {
+    public Map<DayOfWeek, Double> getDescontos() {
         return descontos;
     }
 }

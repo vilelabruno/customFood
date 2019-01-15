@@ -2,7 +2,7 @@ package Dominio;
 
 public class Funcionario {
     
-    public Funcionario(String nome, int cpf, String cargo, boolean eGerente){
+    public Funcionario(String nome, String cpf, String cargo, boolean eGerente){
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = cargo;
@@ -15,7 +15,7 @@ public class Funcionario {
         this.id = id;
     }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -35,7 +35,7 @@ public class Funcionario {
         return id;
     }
 
-    public int getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
@@ -51,7 +51,7 @@ public class Funcionario {
         return eGerente;
     }
 
-    private int cpf;
+    private String cpf;
 
     private String nome;
 
