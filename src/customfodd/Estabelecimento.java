@@ -8,6 +8,8 @@ public class Estabelecimento {
 
     private int id;
 
+    private ArrayList<Funcionario> iF = new ArrayList<Funcionario>();
+    
     public void setId(int id) {
         this.id = id;
     }
@@ -28,13 +30,14 @@ public class Estabelecimento {
         return 1;
     }
     
-    public int cadastraFuncionario(String nome, int cpf, String cargo, bool eGerente){
+    public int cadastraFuncionario(String nome, int cpf, String cargo, Boolean eGerente){
         
         Funcionario f = new Funcionario(nome, cpf, cargo, eGerente);
+        this.iF.add(f);
         return f.getId();
     }
     
-    public Regra criaRegra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos) {
+    public int criaRegra(boolean produtosCustomizaveis, Map<DayOfWeek, Float> descontos) {
         
         Regra r = new Regra(produtosCustomizaveis, descontos);
         return r.getId();
